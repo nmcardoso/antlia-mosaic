@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta property="og:locale" content="en_US" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta property="og:type" content="article" />
+  <meta name="image" content="https://nmcardoso.github.io/antlia-mosaic/card.jpg" />
+  <meta name="og:image" content="https://nmcardoso.github.io/antlia-mosaic/card.jpg" />
+  <meta name="twitter:image" content="https://nmcardoso.github.io/antlia-mosaic/card.jpg" />
+  
+  <meta name="description" content="Lima-Dias et al., 2026, A&A" />
+  <meta property="og:description" content="Lima-Dias et al., 2026, A&A" />
+  <meta property="article:published_time" content="2026-07-15T12:01:00-03:00" />
+
+  <link rel="canonical" href="https://nmcardoso.github.io/antlia-mosaic/" />
+  <meta property="og:url" content="https://nmcardoso.github.io/antlia-mosaic/" />
+  
+  <meta property="og:site_name" content="S-PLUS Antlia Atlas" />
+  <meta property="og:title" content="S-PLUS Antlia Atlas" />
+  <meta property="twitter:title" content="S-PLUS Antlia Atlas" />
+  <title>S-PLUS Antlia Atlas</title>
+  
+  <style>
+    /* Reset */
+    html, body {
+      padding: 0;
+      margin: 0;
+      width: 100%;
+      height: 100%;
+      font-family: sans-serif;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    a {
+      color: rgb(40, 121, 243);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Hidden checkbox for hamburger toggle */
+    #hamburger {
+      display: none;
+    }
+
+    /* Top Bar */
+    .top-bar {
+      flex-shrink: 0;
+      width: 100%;
+      height: 50px;
+      background-color: #232323;
+      display: flex;
+      align-items: center;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    }
+
+    .hamburger-icon {
+      width: 40px;
+      height: 40px;
+      margin-left: 10px;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .hamburger-icon span {
+      display: block;
+      width: 24px;
+      height: 3px;
+      background-color: #eeeeee;
+      border-radius: 2px;
+      transition: transform 0.3s, opacity 0.3s;
+    }
+
+    .title {
+      flex: 1;
+      text-align: center;
+      margin: 0;
+      font-size: 1.4rem;
+      font-weight: 400;
+      color: #eeeeee;
+    }
+
+    /* Main Layout */
+    .main-layout {
+      display: flex;
+      flex: 1;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    /* Drawer */
+    .drawer {
+      width: 380px;
+      min-width: 380px;
+      background-color: #f5f5f5;
+      overflow-y: auto;
+      transition: min-width 0.2s ease, width 0.2s ease, padding 0.2s ease;
+      padding: 16px;
+      box-sizing: border-box;
+    }
+
+    #hamburger:checked ~ .main-layout .drawer {
+      width: 0;
+      min-width: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+
+    .drawer h2 {
+      background-color: #232323;
+      color: #eeeeee;
+      margin: 0 0 8px 0;
+      padding: 0.6rem;
+      font-size: 1rem;
+    }
+
+    .drawer p {
+      margin: 0 0 16px 0;
+      text-align: justify;
+    }
+
+    /* Table Styles */
+    .styled-table {
+      border-collapse: collapse;
+      margin: 0 0 12px 0;
+      font-size: 0.85em;
+      font-family: sans-serif;
+      width: 100%;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      table-layout: fixed;
+    }
+
+    .styled-table thead tr {
+      background-color: #009879;
+      color: #ffffff;
+      text-align: left;
+    }
+
+    .styled-table th,
+    .styled-table td {
+      padding: 8px 10px;
+      word-wrap: break-word;
+    }
+
+    .styled-table tbody tr {
+      border-bottom: 1px solid #dddddd;
+    }
+
+    .styled-table tbody tr:nth-of-type(even) {
+      background-color: #f3f3f3;
+    }
+
+    .styled-table tbody tr:nth-of-type(odd) {
+      background-color: #e3e3e3;
+    }
+
+    .yellow-table tbody tr {
+      border-left: 6px solid #f7e260;
+    }
+
+    .green-table tbody tr {
+      border-left: 6px solid #009879;
+    }
+
+    .purple-table tbody tr {
+      border-left: 6px solid #98008a;
+    }
+
+    .grey-table tbody tr {
+      border-left: 6px solid #4f4f4f;
+    }
+
+    /* Aladin Container */
+    #aladin-container {
+      flex: 1;
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</head>
+<body>
+  <input type="checkbox" id="hamburger" />
+
+  <header class="top-bar">
+    <label for="hamburger" class="hamburger-icon" id="hamburger-label">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+    <h1 class="title">S-PLUS Antlia Atlas</h1>
+  </header>
+
+  <div class="main-layout">
+    <aside class="drawer" id="drawer">
+      <h2>Description</h2>
+      <p>
+        Atlas of the Antlia galaxy cluster produced as supplementary material 
+        for <a href="#">Lima-Dias et al. (2026, submitted)</a>. 
+        The mosaic covers the 73 S-PLUS fields analyzed in the study and was 
+        generated using data from the fifth S-PLUS data release 
+        (<a href="#">Lima et al. 2026, submitted</a>). 
+        The RGB composite follows the band mapping described in Fig. 5 of 
+        <a href="https://iopscience.iop.org/article/10.3847/1538-3881/ae4fb1/pdf#bm_ajae4fb1f5" target="_blank">
+          Cardoso et al. (2026)</a>.
+      </p>
+
+      <h2>Properties</h2>
+      <!-- Yellow Table - General Info -->
+      <table class="styled-table yellow-table">
+        <thead><tr><th>Property</th><th>Value</th></tr></thead>
+        <tbody>
+          <tr><td>creator_did</td><td id="prop_creator_did"></td></tr>
+          <tr><td>obs_title</td><td id="prop_obs_title"></td></tr>
+          <tr><td>moc_sky_fraction</td><td id="prop_moc_sky_fraction"></td></tr>
+          <tr><td>hips_creator</td><td id="prop_hips_creator"></td></tr>
+          <tr><td>dataproduct_type</td><td id="prop_dataproduct_type"></td></tr>
+        </tbody>
+      </table>
+
+      <!-- Green Table - HiPS Technical -->
+      <table class="styled-table green-table">
+        <thead><tr><th>Property</th><th>Value</th></tr></thead>
+        <tbody>
+          <tr><td>hips_frame</td><td id="prop_hips_frame"></td></tr>
+          <tr><td>hips_order</td><td id="prop_hips_order"></td></tr>
+          <tr><td>hips_tile_format</td><td id="prop_hips_tile_format"></td></tr>
+          <tr><td>hips_initial_ra</td><td id="prop_hips_initial_ra"></td></tr>
+          <tr><td>hips_initial_dec</td><td id="prop_hips_initial_dec"></td></tr>
+          <tr><td>hips_initial_fov</td><td id="prop_hips_initial_fov"></td></tr>
+        </tbody>
+      </table>
+
+      <!-- Purple Table - Observation -->
+      <table class="styled-table purple-table">
+        <thead><tr><th>Property</th><th>Value</th></tr></thead>
+        <tbody>
+          <tr><td>obs_regime</td><td id="prop_obs_regime"></td></tr>
+        </tbody>
+      </table>
+
+      <!-- Grey Table - Remaining Properties -->
+      <table class="styled-table grey-table">
+        <thead><tr><th>Property</th><th>Value</th></tr></thead>
+        <tbody id="grey_table_body">
+        </tbody>
+      </table>
+    </aside>
+
+    <div id="aladin-container"></div>
+  </div>
+
+  <script src="https://aladin.cds.unistra.fr/AladinLite/api/v3/latest/aladin.js" charset="utf-8"></script>
+  <script src="app.js"></script>
+</body>
+</html>

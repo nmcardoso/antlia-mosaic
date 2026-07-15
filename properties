@@ -1,0 +1,40 @@
+creator_did          = ivo://UNK.AUTH/P/splus-antlia-rgb
+hips_creator         = Natanael M. Cardoso (natanael.net)
+#hips_copyright      = Copyright mention of the HiPS
+obs_title            = splus-antlia-rgb
+#obs_collection      = Dataset collection name
+#obs_description     = Dataset text description
+#obs_ack             = Acknowledgement mention
+#prov_progenitor     = Provenance of the original data (free text)
+#bib_reference       = Bibcode for bibliographic reference
+#bib_reference_url   = URL to bibliographic reference
+#obs_copyright       = Copyright mention of the original data
+#obs_copyright_url   = URL to copyright page of the original data
+#em_min              = Start in spectral coordinates in meters ( =2.998E8/freq in Hz, or =1.2398841929E-12*energy in MeV )
+#em_max              = Stop in spectral coordinates in meters
+#t_min               = Start time in MJD ( =(Unixtime/86400)+40587  or https://heasarc.gsfc.nasa.gov/cgi-bin/Tools/xTime/xTime.pl)
+#t_max               = Stop time in MJD
+#obs_regime          = Waveband keyword (Radio Millimeter Infrared Optical UV EUV X-ray Gamma-ray)
+hips_builder         = Aladin/HipsGen v12.677
+hips_version         = 1.4
+hips_release_date    = 2026-07-15T19:18Z
+hips_frame           = equatorial
+hips_order           = 10
+hips_order_min       = 0
+hips_tile_width      = 512
+#hips_service_url    = ex: http://yourHipsServer/splus-antlia-rgb
+hips_status          = public master clonableOnce
+hips_initial_ra      = 157.42113
+hips_initial_dec     = -35.32579
+hips_pixel_scale     = 1.118E-4
+dataproduct_type     = image
+dataproduct_subtype  = color
+hips_rgb_red         = R [0.0 NaN 255.0 Linear]
+hips_rgb_green       = G [0.0 NaN 255.0 Linear]
+hips_rgb_blue        = B [0.0 NaN 255.0 Linear]
+hipsgen_date         = 2026-07-15T19:15Z
+hipsgen_params       = maxthread=30 inRed=/home/nmcardoso/repos/universe/data/antlia/hips/R inGreen=/home/nmcardoso/repos/universe/data/antlia/hips/G inBlue=/home/nmcardoso/repos/universe/data/antlia/hips/B out=/home/nmcardoso/repos/universe/data/antlia/hips/RGB cache=/home/nmcardoso/repos/universe/data/antlia/hips_cache "pixelCut=0 255" "cmRed=0 255" "cmGreen=0 255" "cmBlue=0 255" "dataRange=0 255" id=splus-antlia-rgb order=10 color=jpeg "creator=Natanael M. Cardoso (natanael.net)" "target=157.42113 -35.32579" RGB
+hips_creation_date   = 2026-07-15T19:15Z
+hips_overlay         = overlayMean mergeOverwriteTile treeMedian
+moc_sky_fraction     = 0.003325
+hips_tile_format     = jpeg
