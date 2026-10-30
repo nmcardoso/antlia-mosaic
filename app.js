@@ -1,3 +1,7 @@
+import A from 'https://cdn.jsdelivr.net/npm/aladin-lite@3/dist/aladin.min.js';
+
+window.A = A;
+
 const specMembers = [
   [157.22304861748628, -35.60545186096564],
   [156.63457104464382, -39.94403229558173],
@@ -312,7 +316,7 @@ async function initAladin() {
 
       ctx.beginPath();
       ctx.moveTo(cx, cy - outerRadius)
-      for (i = 0; i < spikes; i++) {
+      for (let i = 0; i < spikes; i++) {
         x = cx + Math.cos(rot) * outerRadius;
         y = cy + Math.sin(rot) * outerRadius;
         ctx.lineTo(x, y)
